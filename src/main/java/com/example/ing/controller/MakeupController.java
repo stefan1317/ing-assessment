@@ -1,14 +1,14 @@
 package com.example.ing.controller;
 
 import com.example.ing.service.MakeupService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("makeup")
 public class MakeupController {
 
-    @Autowired
-    private MakeupService makeupService;
+    private final MakeupService makeupService;
 }

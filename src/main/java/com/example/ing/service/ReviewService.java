@@ -2,15 +2,14 @@ package com.example.ing.service;
 
 import com.example.ing.repository.ReviewRepository;
 import com.example.ing.utils.ReviewMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 public class ReviewService {
 
-    @Autowired
-    private ReviewRepository reviewRepository;
+    private final ReviewRepository reviewRepository;
 
-    @Autowired
-    private ReviewMapper reviewMapper;
+    private final ReviewMapper reviewMapper;
 }

@@ -2,15 +2,14 @@ package com.example.ing.service;
 
 import com.example.ing.repository.AppUserRepository;
 import com.example.ing.utils.AppUserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 public class AppUserService {
 
-    @Autowired
-    private AppUserRepository appUserRepository;
+    private final AppUserRepository appUserRepository;
 
-    @Autowired
-    private AppUserMapper appUserMapper;
+    private final AppUserMapper appUserMapper;
 }
