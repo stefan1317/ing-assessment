@@ -4,7 +4,7 @@ import lombok.Builder;
 
 @Builder
 public record MakeupDto(
-        int id,
+        long id,
         String name,
         String description,
         String imageUrl,

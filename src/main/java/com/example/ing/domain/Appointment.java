@@ -9,16 +9,18 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Setter
 public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column
     private LocalDateTime date;

@@ -34,10 +34,8 @@ public class SpecificationUtils {
                     predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("durationInHours"), tokenize(duration, ">").getFirst()));
                 } else if (duration.contains("<")) {
                     predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("durationInHours"), tokenize(duration, "<").getFirst()));
-                } else if (duration.contains("=")){
-                    predicates.add(criteriaBuilder.equal(root.get("durationInHours"), duration));
                 } else {
-                    throw new SyntaxException("Wrong syntax.");
+                    predicates.add(criteriaBuilder.equal(root.get("durationInHours"), duration));
                 }
             }
 
@@ -48,10 +46,8 @@ public class SpecificationUtils {
                     predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("price"), tokenize(price, ">").getFirst()));
                 } else if (price.contains("<")) {
                     predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("price"), tokenize(price, "<").getFirst()));
-                } else if (price.contains("=")) {
-                    predicates.add(criteriaBuilder.equal(root.get("price"), price));
                 } else {
-                    throw new SyntaxException("Wrong syntax.");
+                    predicates.add(criteriaBuilder.equal(root.get("price"), price));
                 }
             }
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));

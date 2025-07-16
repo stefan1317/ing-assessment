@@ -26,13 +26,13 @@ public class ReviewController {
         return reviewService.saveReview(reviewDto);
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<List<ReviewDto>> getReviewsByMakeupId(@PathVariable int makeupId) {
+    @GetMapping("/get/{makeupId}")
+    public ResponseEntity<List<ReviewDto>> getReviewsByMakeupId(@PathVariable long makeupId) {
         return reviewService.getReviewsByMakeupId(makeupId);
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteReview(@PathVariable int reviewId) {
+    @DeleteMapping("/delete/{reviewId}")
+    public ResponseEntity<String> deleteReview(@PathVariable long reviewId) {
         return reviewService.deleteReview(reviewId);
     }
 }

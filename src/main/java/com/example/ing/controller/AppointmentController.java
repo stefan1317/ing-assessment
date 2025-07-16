@@ -32,7 +32,7 @@ public class AppointmentController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteAppointments(@RequestBody List<Integer> appointmentsIds) {
+    public ResponseEntity<String> deleteAppointments(@RequestBody List<Long> appointmentsIds) {
         return appointmentService.deleteAppointments(appointmentsIds);
     }
 }

@@ -39,7 +39,7 @@ public class MakeupController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteMakeup(@RequestParam int makeupId) {
+    public ResponseEntity<String> deleteMakeup(@RequestParam long makeupId) {
         return makeupService.deleteMakeup(makeupId);
     }
 }

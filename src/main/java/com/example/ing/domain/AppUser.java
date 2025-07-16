@@ -8,17 +8,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
+@Setter
 public class AppUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column
     private String name;
@@ -33,7 +35,7 @@ public class AppUser {
     private String address;
 
     @Column
-    private List<String> roles;
+    private String role;
 
     @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL, orphanRemoval = true)
     private final List<Review> reviews = new ArrayList<>();

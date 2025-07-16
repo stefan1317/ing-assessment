@@ -1,9 +1,12 @@
 package com.example.ing.service;
 
+import com.example.ing.domain.AppUser;
 import com.example.ing.domain.Makeup;
 import com.example.ing.dto.MakeupDto;
 import com.example.ing.dto.MakeupSearchDto;
 import com.example.ing.exceptions.RecordCannotBeNullException;
+import com.example.ing.repository.AppUserRepository;
+import com.example.ing.repository.AppointmentRepository;
 import com.example.ing.repository.MakeupRepository;
 import com.example.ing.utils.MakeupMapper;
 import com.example.ing.utils.SpecificationUtils;
@@ -62,7 +65,7 @@ public class MakeupService {
         return new ResponseEntity<>(makeupMapper.toDto(savedMakeup), HttpStatus.OK);
     }
 
-    public ResponseEntity<String> deleteMakeup(int makeupId) {
+    public ResponseEntity<String> deleteMakeup(long makeupId) {
         makeupRepository.deleteById(makeupId);
 
         return ResponseEntity.ok("Makeup with id " + makeupId + " was deleted successfully.");
