@@ -3,7 +3,7 @@ package com.example.ing.service;
 import com.example.ing.domain.Appointment;
 import com.example.ing.dto.AppointmentDto;
 import com.example.ing.exceptions.EmailNotValidException;
-import com.example.ing.exceptions.RecordCannotBeNull;
+import com.example.ing.exceptions.RecordCannotBeNullException;
 import com.example.ing.repository.AppointmentRepository;
 import com.example.ing.utils.AppointmentMapper;
 import com.example.ing.utils.StringUtils;
@@ -27,7 +27,7 @@ public class AppointmentService {
     public ResponseEntity<AppointmentDto> saveAppointment(AppointmentDto appointmentDto) {
 
         if (appointmentDto == null) {
-            throw new RecordCannotBeNull("Appointment cannot be null.");
+            throw new RecordCannotBeNullException("Appointment cannot be null.");
         }
 
         Appointment appointment = appointmentMapper.toEntity(appointmentDto);

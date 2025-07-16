@@ -3,7 +3,7 @@ package com.example.ing.service;
 import com.example.ing.domain.Makeup;
 import com.example.ing.dto.MakeupDto;
 import com.example.ing.dto.MakeupSearchDto;
-import com.example.ing.exceptions.RecordCannotBeNull;
+import com.example.ing.exceptions.RecordCannotBeNullException;
 import com.example.ing.repository.MakeupRepository;
 import com.example.ing.utils.MakeupMapper;
 import com.example.ing.utils.SpecificationUtils;
@@ -27,7 +27,7 @@ public class MakeupService {
     public ResponseEntity<MakeupDto> saveMakeup(MakeupDto makeupDto) {
 
         if (makeupDto == null) {
-            throw new RecordCannotBeNull("Makeup cannot be null.");
+            throw new RecordCannotBeNullException("Makeup cannot be null.");
         }
 
         Makeup makeup = makeupMapper.toEntity(makeupDto);
@@ -41,7 +41,7 @@ public class MakeupService {
     public ResponseEntity<List<MakeupDto>> searchMakeup(MakeupSearchDto makeupSearchDto) {
 
         if (makeupSearchDto == null) {
-            throw new RecordCannotBeNull("Search criteria cannot be null.");
+            throw new RecordCannotBeNullException("Search criteria cannot be null.");
         }
 
         List<Makeup> makeups = makeupRepository.findAll(SpecificationUtils.buildMakeupSpecification(makeupSearchDto));

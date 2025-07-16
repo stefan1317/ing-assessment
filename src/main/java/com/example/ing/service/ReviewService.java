@@ -2,7 +2,7 @@ package com.example.ing.service;
 
 import com.example.ing.domain.Review;
 import com.example.ing.dto.ReviewDto;
-import com.example.ing.exceptions.RecordCannotBeNull;
+import com.example.ing.exceptions.RecordCannotBeNullException;
 import com.example.ing.repository.ReviewRepository;
 import com.example.ing.utils.ReviewMapper;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class ReviewService {
     public ResponseEntity<ReviewDto> saveReview(ReviewDto reviewDto) {
 
         if (reviewDto == null) {
-            throw new RecordCannotBeNull("Review cannot be null.");
+            throw new RecordCannotBeNullException("Review cannot be null.");
         }
 
         Review review = reviewMapper.toEntity(reviewDto);
