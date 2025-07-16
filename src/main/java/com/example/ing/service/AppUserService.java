@@ -12,4 +12,6 @@ public class AppUserService {
     private final AppUserRepository appUserRepository;
 
     private final AppUserMapper appUserMapper;
+
+    //TODO: Implement a more complex authentification functionality based on JWT.
 }

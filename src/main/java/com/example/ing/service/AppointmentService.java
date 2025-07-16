@@ -44,9 +44,9 @@ public class AppointmentService {
             throw new EmailNotValidException("This email is not valid.");
         }
 
-        List<Appointment> appointment = appointmentRepository.findByUserEmail(email);
+        List<Appointment> appointments = appointmentRepository.findByAppUser_Email(email);
 
-        return new ResponseEntity<>(appointmentMapper.toDtoList(appointment), HttpStatus.OK);
+        return new ResponseEntity<>(appointmentMapper.toDtoList(appointments), HttpStatus.OK);
     }
 
     public ResponseEntity<String> deleteAppointments(List<Integer> appointmentsIds) {

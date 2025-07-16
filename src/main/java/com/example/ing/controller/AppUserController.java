@@ -11,4 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppUserController {
 
     private final AppUserService appUserService;
+
+    //TODO: Implement a more complex authentification functionality based on JWT.
 }
