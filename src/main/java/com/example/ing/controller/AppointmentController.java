@@ -4,6 +4,7 @@ import com.example.ing.dto.AppointmentDto;
 import com.example.ing.service.AppointmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,16 +22,19 @@ public class AppointmentController {
 
     private final AppointmentService appointmentService;
 
+    @PreAuthorize("hasRole('USER')")
     @PostMapping("/save")
     public ResponseEntity<AppointmentDto> saveAppointment(@RequestBody AppointmentDto appointment) {
         return appointmentService.saveAppointment(appointment);
     }
 
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/get-appointments/{email}")
     public ResponseEntity<List<AppointmentDto>> getAppointmentsByEmail(@PathVariable String email) {
         return appointmentService.getAppointmentsByEmail(email);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteAppointments(@RequestBody List<Long> appointmentsIds) {
         return appointmentService.deleteAppointments(appointmentsIds);

@@ -7,6 +7,7 @@ public record AppUserDto(
         long id,
         String name,
         String email,
+        String password,
         String phone,
         String address,
         String role) {
