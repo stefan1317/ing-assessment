@@ -3,7 +3,6 @@ package com.example.ing.utils;
 import com.example.ing.domain.Makeup;
 import com.example.ing.dto.MakeupSearchDto;
 import jakarta.persistence.criteria.Predicate;
-import org.hibernate.query.SyntaxException;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.util.ArrayList;

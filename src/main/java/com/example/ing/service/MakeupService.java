@@ -1,12 +1,9 @@
 package com.example.ing.service;
 
-import com.example.ing.domain.AppUser;
 import com.example.ing.domain.Makeup;
 import com.example.ing.dto.MakeupDto;
 import com.example.ing.dto.MakeupSearchDto;
 import com.example.ing.exceptions.RecordCannotBeNullException;
-import com.example.ing.repository.AppUserRepository;
-import com.example.ing.repository.AppointmentRepository;
 import com.example.ing.repository.MakeupRepository;
 import com.example.ing.utils.MakeupMapper;
 import com.example.ing.utils.SpecificationUtils;
