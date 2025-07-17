@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "a214b3fb-a518-4a8d-bb7d-22ab19e3ac8e",
+		"name": "ING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36347817"
+	},
+	"item": [
+		{
+			"name": "Makeup",
+			"item": [
+				{
+					"name": "Save Makeup",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaLuiStefan",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "stefan@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Bridal Makeup\",\r\n  \"description\": \"Elegant bridal makeup suitable for weddings and special events.\",\r\n  \"imageUrl\": \"https://example.com/images/bridal-makeup.jpg\",\r\n  \"durationInHours\": 2.5,\r\n  \"price\": 150.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/makeup/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"makeup",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Makeup",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "stefan@example.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "parolaLuiStefan",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bridal\",\r\n    \"durationInHours\": \"2.5\",\r\n    \"price\": \">10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/makeup/search",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"makeup",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Makeup",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaLuiStefan",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "stefan@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Bridal Makeup UPDATED\",\r\n  \"description\": \"Elegant bridal makeup suitable for weddings and special events.\",\r\n  \"imageUrl\": \"https://example.com/images/bridal-makeup.jpg\",\r\n  \"durationInHours\": 2.5,\r\n  \"price\": 150.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/makeup/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"makeup",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Makeup",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaLuiStefan",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "stefan@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/makeup/delete?makeupId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"makeup",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "makeupId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Save Review",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaEmiliei",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "emilia@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"makeupId\": 1,\r\n  \"rating\": 4,\r\n  \"comment\": \"Great color and long-lasting!\",\r\n  \"createdAt\": \"2025-07-16T14:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/review/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Review",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaEmiliei",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "emilia@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/review/get/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaLuiStefan",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "stefan@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/review/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Save Appointment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaEmiliei",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "emilia@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dateTime\": \"2025-07-16T21:00:00\",\r\n  \"durationInHours\": 2.5,\r\n  \"userId\": 1,\r\n  \"makeupId\": 1,\r\n  \"status\": \"COMPLETED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/appointment/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointment",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointments by Email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaEmiliei",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "emilia@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dateTime\": \"2025-07-16T21:00:00\",\r\n  \"durationInHours\": 2.5,\r\n  \"userId\": 1,\r\n  \"makeupId\": 1,\r\n  \"status\": \"COMPLETED\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/appointment/get-appointments/stefan@example.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointment",
+								"get-appointments",
+								"stefan@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Appointment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "parolaLuiStefan",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "stefan@example.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[1]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/appointment/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointment",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
