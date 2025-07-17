@@ -41,7 +41,7 @@ class AppointmentsControllerIT {
 	AppUserRepository appUserRepository;
 
 	@Test
-	void contextLoads() {
+	void deleteReview() {
 
 		Makeup makeup = new Makeup();
 		Makeup savedMakeup = makeupRepository.save(makeup);
