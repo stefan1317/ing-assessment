@@ -24,4 +24,5 @@ not a set of roles.
 As a bonus to this I would integrate Kafka and also TestContainers.
 
 http://localhost:8080/swagger-ui/index.html - swagger
+
 src/main/resources/ING.postman_collection.json - Postman Collection
